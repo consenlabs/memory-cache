@@ -1,6 +1,6 @@
 {
   "name": "@consenlabs-fe/memory-cache",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -10,8 +10,11 @@
     "prettier": "prettier --write .",
     "test": "jest",
     "build": "rm -rf ./dist && rollup -c",
-    "release": "yarn build && yarn publish"
+    "release": "yarn build && yarn publish --non-interactive"
   },
+  "files": [
+    "dist"
+  ],
   "author": "@consenlabs",
   "devDependencies": {
     "@geist-ui/prettier-config": "^1.0.1",
