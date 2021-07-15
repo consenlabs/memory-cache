@@ -1,24 +1,30 @@
 {
-  "name": "package-template",
-  "version": "1.0.0",
-  "description": "Extensible templates for front-end public projects",
-  "main": "dist/index.js",
-  "author": "@consenlabs-fe",
+  "name": "@consenlabs-fe/memory-cache",
+  "version": "0.0.1",
   "license": "MIT",
-  "prettier": "@consenlabs-fe/prettier",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "prettier": "@geist-ui/prettier-config",
   "scripts": {
-    "test": "exit 0",
-    "lint": "exit 0",
-    "build": "exit 0",
-    "release": "exit 0"
+    "prettier": "prettier --write .",
+    "test": "jest",
+    "build": "rollup -c"
   },
-  "engines": {
-    "node": ">=10.1.0"
-  },
+  "author": "@consenlabs",
   "devDependencies": {
-    "@consenlabs-fe/prettier": "^0.1.2"
-  },
-  "publishConfig": {
-    "access": "public"
+    "@geist-ui/prettier-config": "^1.0.1",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
+    "jest-config": "^27.0.6",
+    "prettier": "^2.3.2",
+    "rollup": "^2.53.2",
+    "rollup-plugin-local-resolve": "^1.0.7",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.5"
   }
 }

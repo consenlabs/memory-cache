@@ -1,10 +1,69 @@
-## fe-public-template
+## Memory Cache
 
-This is an extensible project template used open-source by the FE team,
-you can refer to it by clicking <kbd>Use this template</kbd> in the top right corner.
+key-value pair cache tool.
 
-Please do not `push` directly to this project, if you have a new point of view, try creating a PR to tell everyone about it.
+### Features
 
-## Licenses
+- Multiple environment support
+- Stored in memory only
+- Extremely small size (<1kb)
+- No side effects
 
-We use the MIT by default, it depends on your dependencies, but be careful not to use the GPL or its associated licenses.
+### Compatibility
+
+- Browser: FF 45+, Safari 9+, Chrome 42+
+- Browser (low version): Add `class` polyfill from [Babel](https://babeljs.io/) or [core-js](https://github.com/zloirock/core-js)
+- NodeJS: Full support
+- React Native: Full support
+
+### Guide
+
+#### Install
+
+- Run `npm i @consenlabs-fe/memory-cache`.
+- ESM: `import MemoryCache from '@consenlabs-fe/memory-cache'`
+- CJS (NodeJS): `const MemoryCache require('@consenlabs-fe/memory-cache')`
+
+#### Examples
+
+**1. Get and Set**
+
+```typescript
+const cache = new MemoryCache('my-caches')
+
+cache.setItem('name', 'witt')
+cache.getItem('name') // -> 'witt'
+```
+
+**2. Remove and Clean**
+
+```typescript
+const cache = new MemoryCache('my-caches')
+
+cache.setItem('name', 'witt')
+cache.setItem('location', 'china')
+
+cache.removeItem('name')
+cache.getItem('name') // -> null
+cache.getItem('location') // -> 'china'
+
+cache.cleanAll()
+cache.getItem('location') // -> null
+```
+
+**3. Expiration**
+
+```typescript
+const cache = new MemoryCache('my-caches', { maxAge: 100 })
+
+cache.setItem('name', 'witt')
+cache.getItem('name') // -> 'witt'
+
+setTimeout(() => {
+  cache.getItem('name') // -> null
+}, 200)
+```
+
+### License
+
+[MIT](./LICENSE)
