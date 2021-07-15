@@ -15,8 +15,6 @@ jobs:
           node-version: '14.16.1'
       - name: install
         run: yarn install --check-files --frozen-lockfile
-      - name: lint
-        run: yarn lint
       - name: test
         run: yarn test
       - name: build
