@@ -20,9 +20,9 @@ key-value pair cache tool.
 
 #### Install
 
-- Run `npm i @consenlabs-fe/memory-cache`.
+- Run `npm i @consenlabs-fe/memory-cache`
 - ESM: `import MemoryCache from '@consenlabs-fe/memory-cache'`
-- CJS (NodeJS): `const MemoryCache require('@consenlabs-fe/memory-cache')`
+- CJS (NodeJS): `const MemoryCache = require('@consenlabs-fe/memory-cache')`
 
 #### Examples
 
@@ -64,6 +64,6 @@ setTimeout(() => {
 }, 200)
 ```
 
-### License
+### LICENSE
 
 [MIT](./LICENSE)
